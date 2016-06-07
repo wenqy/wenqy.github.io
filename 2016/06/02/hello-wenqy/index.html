@@ -23,7 +23,7 @@ github部署修改配置文件修改全局配置文件：_config.yml1234deploy: 
 启动本地服务1$ hexo server
 默认端口：4000
 github部署修改配置文件修改全局配置文件：_config.yml1234deploy:  typ">
-<meta property="og:updated_time" content="2016-06-06T08:13:58.408Z">
+<meta property="og:updated_time" content="2016-06-07T03:24:59.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello hexo on github">
 <meta name="twitter:description" content="hexo命令安装hexo,命令安装1$ npm install -g hexo
@@ -114,16 +114,20 @@ github部署修改配置文件修改全局配置文件：_config.yml1234deploy: 
 <h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>默认端口：<em>4000</em></p>
 <h2 id="github部署"><a href="#github部署" class="headerlink" title="github部署"></a>github部署</h2><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>修改全局配置文件：<em>_config.yml</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: http://github.com/wenqy/wenqy.gihub.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -deployer -git --save</span><br></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>github上创建wenqy.gihub.io仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>可以使用<em>SSH Keys</em>，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><pre><code>安装git[git-for-windows.github.io](http://git-for-windows.github.io),配置git环境变量
+</code></pre><h3 id="ssh-keys"><a href="#ssh-keys" class="headerlink" title="ssh keys"></a>ssh keys</h3><p>keys生成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ cd ~</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;xxxxxx@xx.com&quot; #邮箱</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/xxx/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/xxx/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/xxx/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:xxxxx xxxxxx@xx.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|        xxxx|</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;xxxxxx@xx.com&quot; -f ~/.ssh/github_blog_keys #指定文件</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/xxx/.ssh/github_blog_keys.</span><br><span class="line">Your public key has been saved in /c/Users/xxx/.ssh/github_blog_keys.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:xxxxx xxxxxx@xx.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|xxxx          |</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ git config --global user.name &quot;wenqy&quot;</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ git config --global user.email &quot;xxxxx@xx.com&quot;</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$ ssh -T git@github.com #测试</span><br><span class="line">The authenticity of host &apos;github.com (192.30.252.121)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:xxxx.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &apos;github.com,192.30.252.121&apos; (RSA) to the list of known hosts.</span><br><span class="line">Hi wenqy! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">xmn-wenqy@G-FJ-XMN-WQY MINGW64 ~</span><br><span class="line">$</span><br></pre></td></tr></table></figure></p>
+<p>github上设置里新建ssh keys,将生成的pub公钥内容复制过去，然后测试是否可通</p>
+<p>然后查看部署<a href="http://wenqy.github.io" target="_blank" rel="external">wenqy.github.io</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/02/hello-wenqy/" data-id="cip3r676o0000fwoyc33gyn8s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/02/hello-wenqy/" data-id="cip4vwkgj0000i4oy03esh8x0" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-nodojs/">hexo,nodojs</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -153,7 +157,7 @@ github部署修改配置文件修改全局配置文件：_config.yml1234deploy: 
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-nodojs/">hexo,nodojs</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
   </div>
 
@@ -163,7 +167,7 @@ github部署修改配置文件修改全局配置文件：_config.yml1234deploy: 
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo-nodojs/" style="font-size: 10px;">hexo,nodojs</a>
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
     </div>
   </div>
 
